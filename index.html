@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="al">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechShop Albania</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">TechShop</div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Kërko produkte...">
+                <button onclick="searchProducts()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="active">Dyqani</a>
+                <a href="register.html">Hyr/Regjistrohu</a>
+            </div>
+            <div class="nav-buttons">
+                <div class="cart" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Kryefaqja</a>
+            <i class="fas fa-chevron-right"></i>
+            <span id="current-category">Të gjitha produktet</span>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Teknologjia më e fundit në duart tuaja</h1>
+            <p>Zbuloni koleksionin tonë të pajisjeve më të reja elektronike</p>
+            <a href="#products" class="cta-button">Eksploro Produktet</a>
+        </div>
+    </section>
+
+    <section class="featured-categories">
+        <div class="container">
+            <h2 class="section-title">Kategoritë Kryesore</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="all">
+                    <div class="category-icon">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <h3>Të Gjitha</h3>
+                    <p>Shiko të gjitha produktet</p>
+                    <a href="#products" class="category-link" onclick="handleCategoryClick('all')">
+                        Shiko më shumë <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="category-card" data-category="phone">
+                    <div class="category-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Telefona</h3>
+                    <p>Zbuloni telefonat më të fundit inteligjentë</p>
+                    <a href="#products" class="category-link" onclick="handleCategoryClick('phone')">
+                        Shiko më shumë <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="category-card" data-category="laptop">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Laptopë</h3>
+                    <p>Laptopë të fuqishëm për çdo nevojë</p>
+                    <a href="#products" class="category-link" onclick="handleCategoryClick('laptop')">
+                        Shiko më shumë <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="category-card" data-category="tablet">
+                    <div class="category-icon">
+                        <i class="fas fa-tablet-alt"></i>
+                    </div>
+                    <h3>Tableta</h3>
+                    <p>Tableta për punë dhe argëtim</p>
+                    <a href="#products" class="category-link" onclick="handleCategoryClick('tablet')">
+                        Shiko më shumë <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="category-card" data-category="accessory">
+                    <div class="category-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3>Aksesorë</h3>
+                    <p>Aksesorë për të gjitha pajisjet tuaja</p>
+                    <a href="#products" class="category-link" onclick="handleCategoryClick('accessory')">
+                        Shiko më shumë <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="products">
+        <section class="products" id="products-container">
+            <!-- Produktet do të shtohen me JavaScript -->
+        </section>
+
+        <div class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h3>Shporta</h3>
+                <button onclick="toggleCart()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Produktet në shportë do të shtohen me JavaScript -->
+            </div>
+            <div class="cart-footer">
+                <div class="total">
+                    <span>Totali:</span>
+                    <span id="cart-total">0 EUR</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Përfundo Blerjen</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Rreth Nesh</h4>
+                <p>TechShop është dyqani juaj i besuar për të gjitha pajisjet elektronike. Ne ofrojmë produkte cilësore dhe shërbim të shkëlqyer për klientët tanë.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Kontakti</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +355 69 451 1533</li>
+                    <li><i class="fas fa-envelope"></i> info@techshop.al</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Rruga "Myslym Shyri", Tiranë</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Lidhjet e Shpejta</h4>
+                <ul>
+                    <li><a href="#">Kushtet e Përdorimit</a></li>
+                    <li><a href="#">Politika e Privatësisë</a></li>
+                    <li><a href="#">Politika e Kthimit</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Na Ndiqni</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>Abonohu për të rejat</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email-i juaj">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TechShop. Të gjitha të drejtat të rezervuara.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Kontrollo nëse vjen nga login
+        const urlParams = new URLSearchParams(window.location.search);
+        const fromLogin = urlParams.get('fromLogin');
+        
+        if (fromLogin) {
+            // Pastro parametrat e URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+            
+            // Shfaq produktet
+            if (typeof displayProducts === 'function') {
+                displayProducts('all');
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html> 
